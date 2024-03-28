@@ -1,0 +1,28 @@
+{
+  "name": "fashion",
+  "version": "1.0.0",
+  "description": "làm dự án web đầu tay",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --inspect index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tinh0378277554/nodejs_fashion.git"
+  },
+  "keywords": [
+    "fashion",
+    "web_ban_hang"
+  ],
+  "author": "thuận tình đẹp zai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tinh0378277554/nodejs_fashion/issues"
+  },
+  "homepage": "https://github.com/Tinh0378277554/nodejs_fashion#readme",
+  "dependencies": {
+    "express": "^4.19.2",
+    "nodemon": "^3.1.0"
+  }
+}
