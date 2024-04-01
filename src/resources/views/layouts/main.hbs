@@ -12,15 +12,30 @@
 <body>
     <div class="app">
         {{> header}}
+        {{> slider}}
 
-        <div class="container"> 
+        <div class="container">
         {{{body}}}
         </div>
-
-        
+    
+       
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+   <script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+  var buttonToShow = document.getElementById('buttonToShow');
+  var elementToHide = document.getElementById('elementToHide');
+
+  buttonToShow.onclick = function() {
+    // Ẩn phần tử khác khi nhấp vào buttonToShow
+    elementToHide.classList.add('hiddenslider');
+  };
+});
+
+   </script>
 </body>
 </html>
     </div>

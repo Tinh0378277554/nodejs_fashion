@@ -1,0 +1,64 @@
+{{!-- <div class="mt-4">
+    <div class="row">
+        <div class="col">
+
+            <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div> --}}
+
+<div class="product-list py-2">
+
+    <div class="product_title border-bottom ">
+        <div class="row">
+
+            <div class="col-lg-4">
+                <strong class="bg-danger text-white">THỜI TRANG</strong>
+            </div>
+            <div class="col-lg-2">
+                Thời trang nữ  
+            </div>
+            <div class="col-lg-2">
+                Thời trang nam 
+            </div>
+            <div class="col-lg-2">
+                Đồng hồ  
+            </div>
+            <div class="col-lg-2">
+                Dày dép nữ 
+            </div>
+        </div>
+    </div>
+
+    <div class="product_item-s py-3">
+        <div class="row">
+
+            {{#each products}}
+            <div class="col-lg-4 ">
+                <div class="card">
+                    <a href="/products/{{this.slug}}">
+                    <img src="{{this.image}}" class="card-img-top" alt="...">
+                    </a>
+                    <div class="card-body">
+                        <a href="/products/{{this.slug}}">
+                        <h5 class="card-title">{{this.name}}</h5>
+                        </a>
+                        <p class="card-text">{{this.price}}</p>
+                        <a href="#" class="btn btn-primary">Mua hàng</a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+
+        </div>
+    </div>
+
+</div>
