@@ -2,6 +2,7 @@
 const path = require('path');
 const express = require('express')
 const morgan = require('morgan')
+const  methodOverride = require('method-override')
 const { engine } = require('express-handlebars')
 const app = express()
 const port = 3000
@@ -19,12 +20,17 @@ app.use(express.urlencoded({
 }))
 app.use(express.json())
 
+app.use(methodOverride('_method'))
+
 // này là hiển thị ra cái log theo kiểu tiêu chuẩn
 app.use(morgan('combined'))
 
 // template engine: sử dụng handlebars
 app.engine('hbs', engine({
-  extname : ".hbs"
+  extname : ".hbs",
+  helpers: {
+    sum: (a, b) => a + b
+}
 }));
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources', 'views'));

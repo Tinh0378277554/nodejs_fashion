@@ -27,6 +27,22 @@ class ProductController {
             .then(() => res.redirect('/'))
             .catch(err => {})
     }
+
+     // [Get] /products/:id/edit
+     edit(req, res, next) {
+        Product.findById(req.params.id)
+            .then(product => res.render('products/edit', {
+                product: mongooseToObject(product)
+            }))
+            .catch(next)
+    }
+
+    // [PUT] /products/:id
+    update(req, res, next) {
+        Product.updateOne({_id: req.params.id}, req.body)
+            .then(() => res.redirect('/me/stored/products'))
+            .catch(next)
+    }   
 }
 
 module.exports = new ProductController;
