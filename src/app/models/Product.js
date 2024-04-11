@@ -9,7 +9,7 @@ const Product = new Schema({
     price: { type: String },
     image: { type: String, minlength: 255},
     videoId: { type: String},
-    slug: { type: String, slug: 'name' },
+    slug: { type: String, slug: 'name', unique: true},
   }, {timestamps: true});
 
   module.exports = mongoose.model('Product', Product);

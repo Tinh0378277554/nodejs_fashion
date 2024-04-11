@@ -18,10 +18,55 @@
                 <td>{{this.createdAt}}</td>
                 <td>
                     <a href="/products/{{this._id}}/edit" class="btn btn-link">sửa</a>
-                    <a href="" class="btn btn-link">xóa</a>
+                    <a href="" class="btn btn-link" data-bs-toggle="modal"  data-bs-target="#deleteProductModel" data-id="{{this._id}}">xóa</a>
                 </td>
             </tr>
            {{/each}}
         </tbody>
     </table>
 </div>
+
+{{!-- confirm delete product --}}
+<div class="modal fade" id="deleteProductModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Xóa sản phẩm này?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Bạn chắc là muốn xóa sản phẩm này chứ?
+      </div>
+      <div class="modal-footer">
+        <button id="btn-delete-product" type="button" class="btn btn-danger">Xóa</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Hủy</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{{!-- Delete hidden form --}}
+    <form name="delete-product-form" method="POST"></form>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const productId;
+        const btnDeleteProduct = document.getElementById('btn-delete-product')
+        const deleteForms = document.forms['delete-product-form']
+
+        // when dialog confirm clicked
+        $('#deleteProductModel').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget) 
+                productId = button.data('id')
+                console.log(productId)
+                })
+
+        // when delete course btn click
+        btnDeleteProduct.onclick = function() {
+            deleteForms.action = '/products/' + productId + '?_method=DELETE';
+            deleteForms.submit();
+        }
+    })
+</script>
