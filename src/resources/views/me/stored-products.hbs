@@ -50,23 +50,27 @@
 {{!-- Delete hidden form --}}
     <form name="delete-product-form" method="POST"></form>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const productId;
-        const btnDeleteProduct = document.getElementById('btn-delete-product')
-        const deleteForms = document.forms['delete-product-form']
+  {{!-- thử nghiệm --}}
+  <script>
 
-        // when dialog confirm clicked
-        $('#deleteProductModel').on('show.bs.modal', function (event) {
-                var button = $(event.relatedTarget) 
-                productId = button.data('id')
-                console.log(productId)
-                })
+      document.addEventListener('DOMContentLoaded', function() {
+        var productId
+        var deleteForms = document.forms['delete-product-form']
+        var btnDeleteProduct = document.getElementById('btn-delete-product')
 
-        // when delete course btn click
-        btnDeleteProduct.onclick = function() {
-            deleteForms.action = '/products/' + productId + '?_method=DELETE';
-            deleteForms.submit();
-        }
-    })
-</script>
+      // xử lý theo thư viện bootstrap
+      var deleteProductModel = document.getElementById('deleteProductModel')
+          deleteProductModel.addEventListener('show.bs.modal', function (event) {
+          var button = event.relatedTarget
+          productId = button.getAttribute('data-id')
+      })
+
+      btnDeleteProduct.onclick = function() {
+         deleteForms.action = '/products/' + productId + '?_method=DELETE';
+         // mục đích tạo forms trống ở trên là để cho nó submit
+         deleteForms.submit();
+      }
+})
+  </script>
+
+
