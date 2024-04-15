@@ -129,8 +129,48 @@ a {
     margin-top: 36px;
   }
 
+// ảnh sản phẩm
+.img_products {
+  width: 290px;
+  height: 300px;
+  object-fit: cover;
+}
 
+// phần name
+.overflow-ellipsis {
+  white-space: nowrap; /* Ngăn chặn dòng xuống mới */
+  overflow: hidden; /* Ẩn nội dung vượt quá kích thước của phần tử */
+  text-overflow: ellipsis; /* Thay thế nội dung vượt quá bằng dấu ba chấm */
+}
 
+// hiệu ứng ảnh
+.image-container {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.image-container img {
+  transition: transform 0.3s ease; /* Hiệu ứng chuyển động trong 0.3s */
+  opacity: 1;
+}
+
+.image-container:hover img {
+  transform: scale(1.4); /* Phóng to ảnh lên 110% khi di chuột vào */
+  opacity: 0.8;
+}
+
+// hiệu ứng chữ
+.hover-effect {
+  transition: 0.2s ease-in; /* Hiệu ứng chuyển đổi màu trong 0.3s */
+  color: #fff;
+  background-color: black;
+}
+
+.hover-effect:hover {
+  color: black; 
+  background-color: #fff;
+}
 
 
 

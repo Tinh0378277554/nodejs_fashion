@@ -56,17 +56,17 @@
         <div class="row">
 
             {{#each products}}
-            <div class="col-lg-4 ">
+            <div class="col-lg-4 py-3">
                 <div class="card">
-                    <a href="/products/{{this.slug}}">
-                    <img src="{{this.image}}" class="card-img-top" alt="...">
+                    <a href="/products/{{this.slug}}" class="image-container">
+                    <img class="img_products" src="{{this.image}}" class="card-img-top" alt="...">
                     </a>
                     <div class="card-body">
                         <a href="/products/{{this.slug}}">
-                        <h5 class="card-title">{{this.name}}</h5>
+                        <h5 class="overflow-ellipsis" class="card-title">{{this.name}}</h5>
                         </a>
                         <p class="card-text">{{this.price}}</p>
-                        <a href="#" class="btn btn-primary">Mua hàng</a>
+                        <a href="/dangky" class="btn btn-primary" class="hover-effect">Mua hàng</a>
                     </div>
                 </div>
             </div>

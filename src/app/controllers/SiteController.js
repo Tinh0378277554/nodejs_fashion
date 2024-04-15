@@ -24,8 +24,8 @@ class SiteController {
     }
 
     // [Get] /search
-    search(req, res) {
-        res.render('search')
+    dangky(req, res) {
+        res.render('dangky')
     }
 
     
